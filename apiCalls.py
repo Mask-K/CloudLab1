@@ -14,13 +14,13 @@ def detect_labels(content: bytes):
 
     response = client.label_detection(image=image)
     labels = response.label_annotations
-    print("Labels:")
 
-    for label in labels:
-        print(label.description)
+    labels_str = 'Labels: ' + ', '.join(label.description for label in labels)
 
     if response.error.message:
         raise Exception(
             "{}\nFor more info on error messages, check: "
             "https://cloud.google.com/apis/design/errors".format(response.error.message)
         )
+
+    return labels_str
