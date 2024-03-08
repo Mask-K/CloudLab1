@@ -1,6 +1,8 @@
 import os
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "imagedescr-e6e0072f3f5c.json"
+import config
+
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = config.API_FILE
 
 
 def detect_labels(content: bytes):
