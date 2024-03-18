@@ -41,7 +41,7 @@ def localize_objects(content: bytes):
 
     font = ImageFont.load_default(size=10)
 
-    for object_ in objects:
+    for object_ in objects: 
         vertices = [(vertex.x * pil_image.width, vertex.y * pil_image.height) for vertex in
                     object_.bounding_poly.normalized_vertices]
         draw.polygon(vertices, outline="red")
